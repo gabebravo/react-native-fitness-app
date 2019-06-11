@@ -1,14 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-
-const age = 39;
+import { Ionicons } from '@expo/vector-icons';
 
 class App extends React.Component {
 
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>{ `Open your app! Your age is ${age}` }</Text>
+        <Ionicons name="ios-pizza" color="red" size={100} />
       </View>
     );
   }
