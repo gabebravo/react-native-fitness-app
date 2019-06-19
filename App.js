@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   View, Text, StyleSheet,
-  TouchableHighlight, TouchableNativeFeedback, TouchableOpacityComponent, TouchableWithoutFeedbackComponent
+  TouchableHighlight, TouchableNativeFeedback, TouchableOpacity, TouchableWithoutFeedback
 } from 'react-native';
 import AddEntry from './components/AddEntry'
 
@@ -18,6 +18,9 @@ class App extends React.Component {
         <TouchableHighlight style={styles.btn} onPress={this.handlePress} underlayColor='#0000ff'>
           <Text style={styles.btnText}>Touchable Highlight</Text>
         </TouchableHighlight>
+        <TouchableOpacity style={styles.btn} onPress={this.handlePress}>
+          <Text style={styles.btnText}>Touchable Opacity</Text>
+        </TouchableOpacity>
       </View>
     );
   };
@@ -35,6 +38,7 @@ const styles = StyleSheet.create({
   },
   btn: {
     backgroundColor: '#E53224',
+    marginBottom: 75,
     padding: 10,
     paddingLeft: 50,
     paddingRight: 50,
