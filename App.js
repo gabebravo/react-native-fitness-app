@@ -8,7 +8,8 @@ import AddEntry from './components/AddEntry'
 class App extends React.Component {
 
   handlePress = () => {
-    alert('hello world');
+    return
+    // alert('hello world');
   };
 
   render() {
