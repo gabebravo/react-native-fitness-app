@@ -1,26 +1,34 @@
 import React from 'react';
 import {
   View, Text, StyleSheet,
-  TouchableHighlight, TouchableNativeFeedback, TouchableOpacity, TouchableWithoutFeedback
+  TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback, // ANDROID ONLY : TouchableNativeFeedback
 } from 'react-native';
 import AddEntry from './components/AddEntry'
 
 class App extends React.Component {
 
   handlePress = () => {
+    alert('hello world');
+  };
+
+  handlePressNada = () => {
     return
-    // alert('hello world');
   };
 
   render() {
     return (
       <View style={styles.container}>
-        <TouchableHighlight style={styles.btn} onPress={this.handlePress} underlayColor='#0000ff'>
+        <TouchableHighlight style={styles.btn} onPress={this.handlePressNada} underlayColor='#0000ff'>
           <Text style={styles.btnText}>Touchable Highlight</Text>
         </TouchableHighlight>
-        <TouchableOpacity style={styles.btn} onPress={this.handlePress}>
+        <TouchableOpacity style={styles.btn}>
           <Text style={styles.btnText}>Touchable Opacity</Text>
         </TouchableOpacity>
+        <TouchableWithoutFeedback onPress={this.handlePress}>
+          <View style={styles.btn}>
+            <Text style={styles.btnText}>Touchable WoutFeedback</Text>
+          </View>
+        </TouchableWithoutFeedback>
       </View>
     );
   };
