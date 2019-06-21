@@ -18,4 +18,3 @@ export default function AppSlider({ max, unit, step, value, onChange }) {
     </View>
   )
 }
-
