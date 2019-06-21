@@ -5,6 +5,10 @@ import Steppers from './Steppers'
 import Slider from './Slider'
 import DateHeader from './DateHeader'
 
+/* TIP : HOW TO LOG ON THE SCREEN
+  <Text>{JSON.stringify(<VALUE>)}</Text>
+*/
+
 const DEFAULT_STATE = {
   run: 0,
   bike: 0,
@@ -61,7 +65,6 @@ class AddEntry extends Component {
     return (
       <View>
         <DateHeader date={(new Date()).toLocaleDateString()} />
-        <Text>{JSON.stringify(this.state)}</Text>
         {Object.keys(metaInfo).map(key => {
           const { getIcon, type, ...rest } = metaInfo[key]
           const value = this.state[key]
