@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import { getMetricMetaInfo, timeToString } from '../utils/helpers'
 import Steppers from './Steppers'
-import Slider from './Slider'
+import AppSlider from './AppSlider'
 import DateHeader from './DateHeader'
 
 /* TIP : HOW TO LOG ON THE SCREEN
@@ -73,7 +73,7 @@ class AddEntry extends Component {
             <View key={key}>
               {getIcon()}
               {type === 'slider' ?
-                <Slider value={value} onChange={() => this.slide(key, value)} {...rest} /> :
+                <AppSlider value={value} onChange={(value) => this.slide(key, value)} {...rest} /> :
                 <Steppers value={value} onIncrement={() => this.increment(key)} onDecrement={() => this.decrement(key)} {...rest} />
               }
             </View>
