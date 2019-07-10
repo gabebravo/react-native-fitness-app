@@ -4,6 +4,8 @@ import { getMetricMetaInfo, timeToString } from '../utils/helpers'
 import Steppers from './Steppers'
 import AppSlider from './AppSlider'
 import DateHeader from './DateHeader'
+import TextButton from './TextButton'
+import { Ionicons } from '@expo/vector-icons'
 
 /* TIP : HOW TO LOG ON THE SCREEN
   <Text>{JSON.stringify(<VALUE>)}</Text>
@@ -60,8 +62,29 @@ class AddEntry extends Component {
     // 4) CLEAR LOCAL NOTIFICATIONS
   }
 
+  reset = () => {
+    const key = timeToString()
+    // Update Redux
+    // Route to Home
+    // Update DB
+  }
+
   render() {
     const metaInfo = getMetricMetaInfo()
+    const { alreadyLogged = false } = this.props
+
+    if(alreadyLogged){
+      return (
+        <View>
+          <Ionicons name="ios-happy" size={100} />
+          <Text>You already logged your information for today</Text>
+          <TextButton onPress={this.reset}>
+            RESET
+          </TextButton>
+        </View>
+      )
+    }
+
     return (
       <View>
         <DateHeader date={(new Date()).toLocaleDateString()} />
