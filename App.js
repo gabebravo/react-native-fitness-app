@@ -2,6 +2,9 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import AddEntry from './components/AddEntry'
 
+// THESE ARE COMMON COMPONENTS IF YOU WANT TO TEST
+// import List from './rn-comps/List'
+
 /* NOTES : 
   rnf = This command will create a reactNative functional component
   rnc = This command will create a reactNative class component
